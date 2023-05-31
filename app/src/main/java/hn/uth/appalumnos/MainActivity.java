@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import hn.uth.appalumnos.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         binding.btnSaludar.setOnClickListener(v -> {
-            binding.txtTitulo.setText("Bienvenido "+binding.edtNombre.getText());
+
+            if(binding.edtNombre.getText().toString().isEmpty()){
+                Snackbar.make(binding.layoutBienvenida, R.string.mensaje_error_nombre,
+                                Snackbar.LENGTH_LONG).show();
+            }else{
+                String mensajeBienvenida = getString(R.string.mensaje_bienvenida, binding.edtNombre.getText());
+                binding.txtTitulo.setText(mensajeBienvenida);
+            }
         });
 
     }
