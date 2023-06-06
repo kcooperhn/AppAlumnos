@@ -70,5 +70,19 @@
         app:srcCompat="@drawable/baseline_back_hand_24"
         tools:visibility="visible" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaludar"
+        app:srcCompat="@drawable/alumno" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
