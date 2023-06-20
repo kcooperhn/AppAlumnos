@@ -1,18 +1,10 @@
 package hn.uth.appalumnos;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
-
-import androidx.core.view.WindowCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
@@ -37,14 +29,11 @@ public class ListadoDatosActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
-            }
+        binding.fab.setOnClickListener(view -> {
+           Intent intento = new Intent(this.getBaseContext(), MainActivity.class);
+           startActivity(intento);
         });
+
         List<Alumno> listadoAlumnos = new ArrayList<>();
         listadoAlumnos.add(new Alumno("Pedro Perez", "2020123456789"));
         listadoAlumnos.add(new Alumno("Juan Fernandez", "20234567895"));
